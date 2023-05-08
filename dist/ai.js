@@ -19,7 +19,9 @@ async function getMessage() {
                 {role: "user", content: inputPrompt.value}
 
             ],
+            prompt:'${inputPrompt.value}\n\nSeparator: ',
             max_tokens: 1000,
+            temperature: 0.7,
             stop:"Separator:"
         })
     };
