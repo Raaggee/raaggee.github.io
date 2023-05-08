@@ -4,6 +4,8 @@ const outputPrompt = document.querySelector('#output');
 const inputPrompt = document.querySelector('#search');
 const clearButton = document.querySelector('#newChat')
 
+
+
 async function getMessage() {
     console.log('click');
     const options = {
@@ -19,10 +21,7 @@ async function getMessage() {
                 {role: "user", content: inputPrompt.value}
 
             ],
-            prompt:'${inputPrompt.value}\n\nSeparator: ',
-            max_tokens: 1000,
-            temperature: 0.7,
-            stop:"Separator:"
+            max_tokens: 1000
         })
     };
 
@@ -31,15 +30,10 @@ async function getMessage() {
         const response = await fetch('https://api.openai.com/v1/chat/completions', options);
         const data = await response.json();
         console.log(data);
-        const separator = "Separator:"
-        const message = data.choice[0].text.split(separator).filter(Boolean)
-        const formattedOutput = message.map(message => {
-            return '<div class = "output-class">${message}</div><hr>'
-        }).join("")
-        outputPrompt.innerHTML = formattedOutput
+        outputPrompt.textContent = data.choices[0].message.content
         document.getElementById("loading").classList.add("hidden")
         document.getElementById("output-box").classList.remove("hidden")
-
+        
     } catch (error) {
         console.log(error);
     }
