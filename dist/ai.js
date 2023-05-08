@@ -35,7 +35,7 @@ async function getMessage() {
         const message = data.choice[0].text.split(separator).filter(Boolean)
         const formattedOutput = message.map(message => {
             return '<div class = "output-class">${message}</div><hr>'
-        }).join
+        }).join("")
         outputPrompt.innerHTML = formattedOutput
         document.getElementById("loading").classList.add("hidden")
         document.getElementById("output-box").classList.remove("hidden")
