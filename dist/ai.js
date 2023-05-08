@@ -1,4 +1,4 @@
-const API_KEY = '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';
+const API_KEY = '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';
 const submitButton = document.querySelector('#submit');
 const outputPrompt = document.querySelector('#output');
 const inputPrompt = document.querySelector('#search');
