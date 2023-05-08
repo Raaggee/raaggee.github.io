@@ -33,6 +33,7 @@ async function getMessage() {
         outputPrompt.textContent = data.choices[0].message.content
         document.getElementById("loading").classList.add("hidden")
         document.getElementById("output-box").classList.remove("hidden")
+        
     } catch (error) {
         console.log(error);
     }
