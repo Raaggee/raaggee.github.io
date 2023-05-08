@@ -1,4 +1,4 @@
-const API_KEY = 'your-api-key-goes-here';
+const API_KEY = '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';
 const submitButton = document.querySelector('#submit');
 const outputPrompt = document.querySelector('#output');
 const inputPrompt = document.querySelector('#search');
